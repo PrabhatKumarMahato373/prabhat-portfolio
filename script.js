@@ -200,3 +200,91 @@ link.classList.add("active");
 });
 
 });
+
+/* PRELOADER */
+
+window.addEventListener("load",function(){
+
+document.getElementById("preloader").style.display="none";
+
+});
+
+
+/* SCROLL BAR */
+
+window.onscroll=function(){
+
+let winScroll=document.documentElement.scrollTop;
+
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+let scrolled=(winScroll/height)*100;
+
+document.getElementById("progress-bar").style.width=scrolled+"%";
+
+}
+
+/* Dark / Light Theme */
+
+const theme = document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme")=="light"){
+    document.body.classList.add("light");
+    theme.innerHTML="☀️";
+}
+
+theme.onclick=()=>{
+
+document.body.classList.toggle("light");
+
+if(document.body.classList.contains("light")){
+
+theme.innerHTML="☀️";
+
+localStorage.setItem("theme","light");
+
+}else{
+
+theme.innerHTML="🌙";
+
+localStorage.setItem("theme","dark");
+
+}
+
+}
+
+const cursor = document.querySelector(".cursor");
+
+if(cursor){
+    document.addEventListener("mousemove", function(e){
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    });
+}
+tsParticles.load("particles-js", {
+  particles: {
+    number: {
+      value: 60
+    },
+    color: {
+      value: "#38bdf8"
+    },
+    links: {
+      enable: true,
+      color: "#38bdf8"
+    },
+    move: {
+      enable: true,
+      speed: 2
+    }
+  }
+});
+const menuBtn=document.getElementById("menuBtn");
+
+const nav=document.querySelector(".nav-links");
+
+menuBtn.onclick=()=>{
+
+nav.classList.toggle("active");
+
+}

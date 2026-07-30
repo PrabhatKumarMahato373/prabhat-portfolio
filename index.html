@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prabhat Kumar Mahato | Portfolio</title>
@@ -12,15 +13,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<body>
+<div id="particles-js"></div>
+<div class="cursor"></div>
+
+
+<div class="bg-circle circle1"></div>
+<div class="bg-circle circle2"></div>
+<div class="bg-circle circle3"></div>
+
+    <!-- Preloader -->
+<div id="preloader">
+<div class="loader"></div>
+</div>
+
+<!-- Scroll Progress -->
+<div id="progress-bar"></div>
 
 <header>
 
     <nav class="navbar">
 
+        <div class="theme-toggle" id="themeToggle">
+    🌙
+    </div>
         <div class="logo">
             Prabhat<span>.</span>
         </div>
-
+        <div id="menuBtn">☰</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -34,7 +54,7 @@
 </header>
 
 <section class="hero">
-
+    <section class="hero" id="home" data-aos="fade-up"></section>
     <div class="hero-text">
 
         <h3>Hello, I'm</h3>
@@ -52,6 +72,10 @@
 
             <a href="resume.pdf" class="btn">Download CV</a>
 
+            <a href="resume.pdf" target="_blank" class="btn-outline">
+               Preview Resume
+            </a>
+
             <a href="#" class="btn-outline">Hire Me</a>
 
         </div>
@@ -66,18 +90,11 @@
 
 </section>
 
-<script src="script.js"></script>
-
-</body>
-<div class="bg-circle circle1"></div>
-<div class="bg-circle circle2"></div>
-<div class="bg-circle circle3"></div>
-</html>
 
 <!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
-
+    <section class="about" id="about" data-aos="fade-right"></section>
     <div class="about-image">
 
         <img src="profile.png" alt="Prabhat">
@@ -106,7 +123,7 @@
 
 <!-- ================= SKILLS ================= -->
 
-<section class="skills" id="skills">
+<section class="skills" id="skills" data-aos="fade-up">
 
 <h2 class="section-title">My Skills</h2>
 
@@ -149,7 +166,7 @@
 <!-- ================= EDUCATION ================= -->
 
 <section class="education" id="education">
-
+    <section class="education" id="education" data-aos="fade-left"></section>
     <h2 class="section-title">Education</h2>
 
     <div class="timeline">
@@ -181,7 +198,7 @@
 <!-- ================= PROJECTS ================= -->
 
 <!-- <section class="projects" id="projects">
-
+<section class="projects" id="projects" data-aos="fade-up">
 <h2 class="section-title">Projects</h2>
 
 <div class="project-container">
@@ -260,7 +277,7 @@
 <!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
-
+    <section class="contact" id="contact" data-aos="zoom-in"></section>
     <h2 class="section-title">Contact Me</h2>
 
     <div class="contact-container">
@@ -277,7 +294,7 @@
 
             <div class="social-links">
 
-                <a href="https://github.com/PrabhatKumarMahato373/" target="_blank">GitHub</a>
+                <a href="https://github.com/PrabhatKumarMahato373/"target="_blank">GitHub</a>
 
                 <a href="https://www.linkedin.com/in/prabhat-kumar-mahato-b5a129338" target="_blank">LinkedIn</a>
 
@@ -286,6 +303,8 @@
             </div>
 
         </div>
+
+        <div class="cursor"></div>
 
         <form class="contact-form">
 
@@ -310,3 +329,24 @@
     <p>© 2026 Prabhat Kumar Mahato | All Rights Reserved</p>
 
 </footer>
+
+<a href="https://wa.me/916299269967" class="whatsapp" target="_blank" rel="noopener">
+    💬
+</a>
+
+<script src="script.js">
+
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1000,
+once:true
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+</body>
+</html>
