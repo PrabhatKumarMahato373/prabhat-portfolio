@@ -130,38 +130,26 @@ alert("Thank you! Your message has been sent.");
 
 /* Animated Counter */
 
-const counters=document.querySelectorAll(".stat-box h2");
+const counters = document.querySelectorAll(".stat-box h2");
 
-const speed=80;
+counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
 
-counters.forEach(counter=>{
+    const update = () => {
+        const increment = Math.ceil(target / 50);
 
-const update=()=>{
+        if (count < target) {
+            count += increment;
+            if (count > target) count = target;
+            counter.innerText = count + "+";
+            setTimeout(update, 30);
+        } else {
+            counter.innerText = target + "+";
+        }
+    };
 
-const target=parseInt(counter.innerText);
-
-const count=parseInt(counter.getAttribute("data-count"))||0;
-
-const increment=Math.ceil(target/speed);
-
-if(count<target){
-
-counter.setAttribute("data-count",count+increment);
-
-counter.innerText=count+increment+"+";
-
-setTimeout(update,20);
-
-}else{
-
-counter.innerText=target+"+";
-
-}
-
-};
-
-update();
-
+    update();
 });
 
 
