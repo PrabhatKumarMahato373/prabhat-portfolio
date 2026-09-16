@@ -1,278 +1,35 @@
-// Typing Effect
+﻿const body=document.body;const header=document.querySelector('.site-header');const navPanel=document.getElementById('navLinks');const menuButton=document.getElementById('menuBtn');const progressBar=document.getElementById('progress-bar');const topButton=document.getElementById('topBtn');const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const projectDetails={portfolio:{title:'Portfolio Website',description:'A responsive personal portfolio focused on clean presentation, strong typography, and lightweight interactions.',tags:['HTML5','CSS3','JavaScript'],className:'visual-blue',visual:'< portfolio />'},student:{title:'Student Management System',description:'A Java-based desktop project concept for student records, designed around clear data flows and practical workflows.',tags:['Java','OOP','Desktop'],className:'visual-green',visual:'{ student.records }'},weather:{title:'Weather App',description:'A focused weather application concept designed around quick, readable updates and a simple interface.',tags:['JavaScript','API','Responsive'],className:'visual-orange',visual:'â˜¼ 28Â° / clear'}};
+function closeMenu(){navPanel.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}menuButton.addEventListener('click',()=>{const open=navPanel.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',closeMenu));
+function updateScrollState(){const pageHeight=document.documentElement.scrollHeight-window.innerHeight;progressBar.style.width=`${pageHeight?(window.scrollY/pageHeight)*100:0}%`;header.classList.toggle('scrolled',window.scrollY>30);topButton.classList.toggle('visible',window.scrollY>500)}window.addEventListener('scroll',updateScrollState,{passive:true});updateScrollState();topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:reducedMotion?'auto':'smooth'}));
+const themeButton=document.getElementById('themeToggle');if(localStorage.getItem('portfolio-theme')==='light')body.classList.add('light');function updateThemeButton(){const light=body.classList.contains('light');body.style.setProperty('--bg',light?'#ffffff':'#071019');body.style.setProperty('--surface',light?'rgba(255,255,255,.9)':'rgba(14,29,41,.72)');body.style.setProperty('--surface-solid',light?'#ffffff':'#0e1d29');themeButton.innerHTML=light?'&#9790;':'&#9728;';themeButton.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');themeButton.setAttribute('title',light?'Switch to dark theme':'Switch to light theme')}updateThemeButton();themeButton.addEventListener('click',()=>{body.classList.toggle('light');localStorage.setItem('portfolio-theme',body.classList.contains('light')?'light':'dark');updateThemeButton()});
+const revealObserver=new IntersectionObserver((entries,observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(element=>revealObserver.observe(element));
+const sections=document.querySelectorAll('main section[id]');const navigationLinks=document.querySelectorAll('.nav-links a');const sectionObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)navigationLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${entry.target.id}`))})},{rootMargin:'-35% 0px -55% 0px'});sections.forEach(section=>sectionObserver.observe(section));
+const roles=['Java Development','Frontend Development','Web Design','Problem Solving'];const typingElement=document.getElementById('typing-text');let roleIndex=0;let characterIndex=0;let deleting=false;function typeRole(){if(!typingElement)return;const role=roles[roleIndex];typingElement.textContent=role.slice(0,characterIndex);if(!deleting&&characterIndex<role.length)characterIndex+=1;else if(deleting&&characterIndex>0)characterIndex-=1;else if(!deleting)deleting=true;else{deleting=false;roleIndex=(roleIndex+1)%roles.length}window.setTimeout(typeRole,deleting?45:90)}if(!reducedMotion)typeRole();
+const counterObserver=new IntersectionObserver((entries,observer)=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;const counter=entry.target;const target=Number(counter.dataset.target);const start=performance.now();function updateCounter(now){const progress=Math.min((now-start)/1100,1);counter.textContent=`${Math.floor(progress*target)}+`;if(progress<1)requestAnimationFrame(updateCounter)}requestAnimationFrame(updateCounter);observer.unobserve(counter)})},{threshold:.7});document.querySelectorAll('[data-target]').forEach(counter=>counterObserver.observe(counter));
+document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(item=>item.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;document.querySelectorAll('.project-card').forEach(card=>card.classList.toggle('is-hidden',filter!=='all'&&card.dataset.category!==filter))}));
+const modal=document.getElementById('projectModal');const modalVisual=document.getElementById('modalVisual');function openProject(projectKey){const project=projectDetails[projectKey];if(!project)return;modalVisual.className=`modal-visual ${project.className}`;modalVisual.textContent=project.visual;document.getElementById('modalTitle').textContent=project.title;document.getElementById('modalDescription').textContent=project.description;document.getElementById('modalTags').innerHTML=project.tags.map(tag=>`<span>${tag}</span>`).join('');document.getElementById('modalGithub').href='https://github.com/PrabhatKumarMahato373/';document.getElementById('modalDemo').href='#projects';modal.classList.add('open');modal.setAttribute('aria-hidden','false');body.classList.add('modal-open')}function closeProject(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');body.classList.remove('modal-open')}document.querySelectorAll('.view-project').forEach(button=>button.addEventListener('click',()=>openProject(button.closest('.project-card').dataset.project)));document.querySelectorAll('[data-close-modal]').forEach(element=>element.addEventListener('click',closeProject));document.addEventListener('keydown',event=>{if(event.key==='Escape')closeProject()});
+const form=document.getElementById('contactForm');const formStatus=document.getElementById('formStatus');form.addEventListener('submit',event=>{event.preventDefault();if(!form.checkValidity()){formStatus.textContent='Please complete every field before sending.';formStatus.className='form-status error';form.reportValidity();return}formStatus.textContent='Thanks, Prabhat will get back to you soon.';formStatus.className='form-status success';form.reset()});
+if(window.matchMedia('(pointer: fine)').matches&&window.innerWidth>768){const dot=document.querySelector('.cursor-dot');const ring=document.querySelector('.cursor-ring');let mouseX=0,mouseY=0,ringX=0,ringY=0;document.addEventListener('mousemove',event=>{mouseX=event.clientX;mouseY=event.clientY;dot.style.left=`${mouseX}px`;dot.style.top=`${mouseY}px`});function moveRing(){ringX+=(mouseX-ringX)*.18;ringY+=(mouseY-ringY)*.18;ring.style.left=`${ringX}px`;ring.style.top=`${ringY}px`;requestAnimationFrame(moveRing)}moveRing();document.querySelectorAll('a,button').forEach(element=>{element.addEventListener('mouseenter',()=>ring.classList.add('hover'));element.addEventListener('mouseleave',()=>ring.classList.remove('hover'))})}
+window.addEventListener('load',()=>{const preloader=document.getElementById('preloader');const percent=document.getElementById('loader-percent');const progress=document.querySelector('.loader-track i');let value=0;const timer=window.setInterval(()=>{value+=20;const current=Math.min(value,100);percent.textContent=`${current}%`;if(progress)progress.style.width=`${current}%`;if(value>=100){window.clearInterval(timer);window.setTimeout(()=>{preloader.style.opacity='0';window.setTimeout(()=>preloader.remove(),650)},reducedMotion?0:240)}},reducedMotion?1:70)});
 
-const roles = [
-    "Java Developer",
-    "Frontend Developer",
-    "Web Designer",
-    "B.Tech CSE Student"
-];
-
-let index = 0;
-let char = 0;
-let current = "";
-let typing = true;
-
-const heading = document.querySelector(".hero-text h2");
-
-function type(){
-
-if(typing){
-
-current = roles[index].substring(0,char++);
-
-heading.textContent=current;
-
-if(char>roles[index].length){
-
-typing=false;
-
-setTimeout(type,1200);
-
-return;
-
+const ambientCanvas=document.getElementById('ambient-canvas');
+if(ambientCanvas){
+	const ambientContext=ambientCanvas.getContext('2d');
+	const ambientParticles=[];
+	const particleCount=window.innerWidth<680?28:52;
+	function resizeAmbientCanvas(){ambientCanvas.width=window.innerWidth;ambientCanvas.height=window.innerHeight}
+	function seedAmbientParticles(){ambientParticles.length=0;for(let index=0;index<particleCount;index++)ambientParticles.push({x:Math.random()*ambientCanvas.width,y:Math.random()*ambientCanvas.height,r:Math.random()*1.5+.35,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,a:Math.random()*.45+.15})}
+	function drawAmbientField(){ambientContext.clearRect(0,0,ambientCanvas.width,ambientCanvas.height);ambientParticles.forEach(particle=>{if(!reducedMotion){particle.x+=particle.vx;particle.y+=particle.vy;if(particle.x<0||particle.x>ambientCanvas.width)particle.vx*=-1;if(particle.y<0||particle.y>ambientCanvas.height)particle.vy*=-1}ambientContext.beginPath();ambientContext.arc(particle.x,particle.y,particle.r,0,Math.PI*2);ambientContext.fillStyle=`rgba(88,210,229,${particle.a})`;ambientContext.fill()});if(!reducedMotion)requestAnimationFrame(drawAmbientField)}
+	resizeAmbientCanvas();seedAmbientParticles();drawAmbientField();window.addEventListener('resize',()=>{resizeAmbientCanvas();seedAmbientParticles()},{passive:true})
 }
 
-}else{
-
-current=roles[index].substring(0,char--);
-
-heading.textContent=current;
-
-if(char<0){
-
-typing=true;
-
-index++;
-
-if(index===roles.length){
-
-index=0;
-
-}
-
-}
-
-}
-
-setTimeout(type,120);
-
-}
-
-type();
-
-
-
-// Scroll Animation
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-});
-
-document.querySelectorAll("section").forEach(sec=>{
-
-sec.classList.add("hidden");
-
-observer.observe(sec);
-
-});
-
-// Back To Top
-
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>400){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
-
-}
-
-});
-
-topBtn.onclick=()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-};
-
-
-
-// Contact Form
-
-document.querySelector(".contact-form").addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-alert("Thank you! Your message has been sent.");
-
-});
-
-/* Animated Counter */
-
-const counters = document.querySelectorAll(".stat-box h2");
-
-counters.forEach(counter => {
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
-
-    const update = () => {
-        const increment = Math.ceil(target / 50);
-
-        if (count < target) {
-            count += increment;
-            if (count > target) count = target;
-            counter.innerText = count + "+";
-            setTimeout(update, 30);
-        } else {
-            counter.innerText = target + "+";
-        }
-    };
-
-    update();
-});
-
-
-/* Active Navbar */
-
-const sections=document.querySelectorAll("section");
-
-const navLinks=document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll",()=>{
-
-let current="";
-
-sections.forEach(sec=>{
-
-const top=sec.offsetTop-150;
-
-if(pageYOffset>=top){
-
-current=sec.getAttribute("id");
-
-}
-
-});
-
-navLinks.forEach(link=>{
-
-link.classList.remove("active");
-
-if(link.getAttribute("href")==="#"+current){
-
-link.classList.add("active");
-
-}
-
-});
-
-});
-
-/* PRELOADER */
-
-window.addEventListener("load",function(){
-
-document.getElementById("preloader").style.display="none";
-
-});
-
-
-/* SCROLL BAR */
-
-window.onscroll=function(){
-
-let winScroll=document.documentElement.scrollTop;
-
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-let scrolled=(winScroll/height)*100;
-
-document.getElementById("progress-bar").style.width=scrolled+"%";
-
-}
-
-/* Dark / Light Theme */
-
-const theme = document.getElementById("themeToggle");
-
-if(localStorage.getItem("theme")=="light"){
-    document.body.classList.add("light");
-    theme.innerHTML="☀️";
-}
-
-theme.onclick=()=>{
-
-document.body.classList.toggle("light");
-
-if(document.body.classList.contains("light")){
-
-theme.innerHTML="☀️";
-
-localStorage.setItem("theme","light");
-
-}else{
-
-theme.innerHTML="🌙";
-
-localStorage.setItem("theme","dark");
-
-}
-
-}
-
-const cursor = document.querySelector(".cursor");
-
-if(cursor){
-    document.addEventListener("mousemove", function(e){
-        cursor.style.left = e.clientX + "px";
-        cursor.style.top = e.clientY + "px";
-    });
-}
-tsParticles.load("particles-js", {
-  particles: {
-    number: {
-      value: 60
-    },
-    color: {
-      value: "#38bdf8"
-    },
-    links: {
-      enable: true,
-      color: "#38bdf8"
-    },
-    move: {
-      enable: true,
-      speed: 2
-    }
-  }
-});
-const menuBtn=document.getElementById("menuBtn");
-
-const nav=document.querySelector(".nav-links");
-
-menuBtn.onclick=()=>{
-
-nav.classList.toggle("active");
-
+if(!reducedMotion&&window.matchMedia('(pointer: fine)').matches){
+	document.querySelectorAll('.skill-card,.project-card,.service-card').forEach(card=>{
+		card.addEventListener('pointermove',event=>{const bounds=card.getBoundingClientRect();const rotateX=((event.clientY-bounds.top)/bounds.height-.5)*-5;const rotateY=((event.clientX-bounds.left)/bounds.width-.5)*5;card.style.transform=`perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`});
+		card.addEventListener('pointerleave',()=>{card.style.transform=''});
+	});
+	const heroVisual=document.querySelector('.hero-visual');
+	heroVisual?.addEventListener('pointermove',event=>{const bounds=heroVisual.getBoundingClientRect();const x=(event.clientX-bounds.left)/bounds.width-.5;const y=(event.clientY-bounds.top)/bounds.height-.5;heroVisual.style.transform=`translate3d(${x*8}px,${y*8}px,0)`});
+	heroVisual?.addEventListener('pointerleave',()=>{heroVisual.style.transform=''});
 }

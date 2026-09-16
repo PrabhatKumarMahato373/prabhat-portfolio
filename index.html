@@ -1,353 +1,63 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabhat Kumar Mahato | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <meta name="description" content="Portfolio of Prabhat Kumar Mahato, Java developer and frontend developer.">
+    <title>Prabhat Kumar Mahato | Developer Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="motion.css">
 </head>
 <body>
-<body>
-<div id="particles-js"></div>
-<div class="cursor"></div>
-
-
-<div class="bg-circle circle1"></div>
-<div class="bg-circle circle2"></div>
-<div class="bg-circle circle3"></div>
-
-    <!-- Preloader -->
-<div id="preloader">
-<div class="loader"></div>
-</div>
-
-<!-- Scroll Progress -->
-<div id="progress-bar"></div>
-
-<header>
-
-    <nav class="navbar">
-
-        
-        <div class="logo">
-            Prabhat<span>.</span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="theme-toggle" id="themeToggle">
-             🌙
-        </div>
-        <div id="menuBtn">☰</div>
-    </nav>
-
-</header>
-
-<section class="hero">
-    <section class="hero" id="home" data-aos="fade-up"></section>
-    <div class="hero-text">
-
-        <h3>Hello, I'm</h3>
-
-        <h1>Prabhat Kumar Mahato</h1>
-
-        <h2>B.Tech CSE Student</h2>
-
-        <p>
-            Passionate Java Developer and Frontend Web Developer creating
-            clean, responsive and modern websites.
-        </p>
-
-        <div class="buttons">
-
-            <a href="resume.pdf" class="btn">Download CV</a>
-
-            <!-- <a href="resume.pdf" target="_blank" class="btn-outline">
-               Preview Resume
-            </a> -->
-
-            <a href="#" class="btn-outline">Hire Me</a>
-
-        </div>
-
-    </div>
-
-    <div class="hero-image">
-
-        <img src="profile.png" alt="Profile">
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
-    <section class="about" id="about" data-aos="fade-right"></section>
-    <div class="about-image">
-
-        <img src="profile.png" alt="Prabhat">
-
-    </div>
-
-    <div class="about-content">
-
-        <h2>About Me</h2>
-
-        <p>
-            Hello! I'm <strong>Prabhat Kumar Mahato</strong>, a B.Tech Computer
-            Science student at Swami Vivekananda University. I enjoy creating
-            modern websites and solving programming problems using Java and C.
-        </p>
-
-        <p>
-            My goal is to become a professional Full Stack Java Developer and
-            build high-quality software that solves real-world problems.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SKILLS ================= -->
-
-<section class="skills" id="skills" data-aos="fade-up">
-
-<h2 class="section-title">My Skills</h2>
-
-<div class="skill-container">
-
-<div class="skill-card">
-<h3>HTML5</h3>
-<div class="bar"><span class="skill-fill skill-95"></span></div>
-</div>
-
-<div class="skill-card">
-<h3>CSS3</h3>
-<div class="bar"><span class="skill-fill skill-90"></span></div>
-</div>
-
-<div class="skill-card">
-<h3>JavaScript</h3>
-<div class="bar"><span class="skill-fill skill-70"></span></div>
-</div>
-
-<div class="skill-card">
-<h3>Java</h3>
-<div class="bar"><span class="skill-fill skill-80"></span></div>
-</div>
-
-<div class="skill-card">
-<h3>C Programming</h3>
-<div class="bar"><span class="skill-fill skill-75"></span></div>
-</div>
-
-<div class="skill-card">
-<h3>Git & GitHub</h3>
-<div class="bar"><span class="skill-fill skill-65"></span></div>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= EDUCATION ================= -->
-
-<section class="education" id="education">
-    <section class="education" id="education" data-aos="fade-left"></section>
-    <h2 class="section-title">Education</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-box">
-            <h3>B.Tech (Computer Science & Engineering)</h3>
-            <h4>Swami Vivekananda University</h4>
-            <span>2024 - Present</span>
-            <p>Currently pursuing B.Tech with a focus on Java, Web Development and Data Structures.</p>
-        </div>
-
-        <div class="timeline-box">
-            <h3>Higher Secondary (12th)</h3>
-            <h4>Jharkhand Academic Council</h4>
-            <span>2022 - 2024</span>
-        </div>
-
-        <div class="timeline-box">
-            <h3>Secondary (10th)</h3>
-            <h4>Jharkhand Academic Council</h4>
-            <span>2021 - 2022</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<!-- <section class="projects" id="projects">
-<section class="projects" id="projects" data-aos="fade-up">
-<h2 class="section-title">Projects</h2>
-
-<div class="project-container">
-
-<div class="project-card">
-
-<img src="project1.png" alt="">
-
-<h3>Portfolio Website</h3>
-
-<p>Responsive Portfolio using HTML, CSS and JavaScript.</p>
-
-<a href="#">Live Demo</a>
-
-</div>
-
-<div class="project-card">
-
-<img src="project2.png" alt="">
-
-<h3>Student Management System</h3>
-
-<p>Java based desktop project for student records.</p>
-
-<a href="#">GitHub</a>
-
-</div>
-
-<div class="project-card">
-
-<img src="project3.png" alt="">
-
-<h3>Weather App</h3>
-
-<p>Weather application using JavaScript API.</p>
-
-<a href="#">Live Demo</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-/
-
-
-<!-- ================= STATS ================= -->
-
-<section class="stats">
-
-<div class="stat-box">
-    <h2 data-target="10">0</h2>
-    <p>Projects</p>
-</div>
-
-<div class="stat-box">
-    <h2 data-target="5">0</h2>
-    <p>Certificates</p>
-</div>
-
-<div class="stat-box">
-    <h2 data-target="2">0</h2>
-    <p>Years Learning</p>
-</div>
-
-<div class="stat-box">
-    <h2 data-target="100">0</h2>
-    <p>Dedication</p>
-</div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-    <section class="contact" id="contact" data-aos="zoom-in"></section>
-    <h2 class="section-title">Contact Me</h2>
-
-    <div class="contact-container">
-
-        <div class="contact-info">
-
-            <h3>Let's Connect</h3>
-
-            <p>📞 +91 6299269967</p>
-
-            <p>📧 prabhatkumarmahato373@gmail.com</p>
-
-            <p>📍 Bokaro, Jharkhand</p>
-
-            <div class="social-links">
-
-                <a href="https://github.com/PrabhatKumarMahato373/" target="_blank" rel="noopener noreferrer">GitHub</a>
-
-                <a href="https://www.linkedin.com/in/prabhat-kumar-mahato-b5a129338" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-
-                <a href="https://www.instagram.com/kumar_mahato_9967?igsh=MWhseGZmeW1hNnY2Yg==" target="_blank" rel="noopener noreferrer">Instagram</a>
-
-            </div>
-
-        </div>
-
-        <div class="cursor"></div>
-
-        <form class="contact-form">
-
-            <input type="text" placeholder="Your Name" required>
-
-            <input type="email" placeholder="Your Email" required>
-
-            <textarea rows="6" placeholder="Your Message"></textarea>
-
-            <button type="submit" class="btn">Send Message</button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<button id="topBtn">↑</button>
-
-<footer>
-
-    <p>© 2026 Prabhat Kumar Mahato | All Rights Reserved</p>
-
-</footer>
-
-<a href="https://wa.me/916299269967" class="whatsapp" target="_blank" rel="noopener">
-    💬
-</a>
-
-<script src="script.js">
-
-</script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init({
-duration:1000,
-once:true
-});
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
+    <div class="noise" aria-hidden="true"></div>
+    <div class="background-orb orb-one" aria-hidden="true"></div>
+    <div class="background-orb orb-two" aria-hidden="true"></div>
+    <div class="grid-lines" aria-hidden="true"></div>
+    <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+    <div id="progress-bar" aria-hidden="true"></div>
+    <div id="preloader" role="status" aria-label="Loading portfolio"><div class="loader-shell"><div class="loader-mark"><span>PKM</span></div><p>Loading experience <strong id="loader-percent">0%</strong></p><div class="loader-track"><i></i></div><small>CRAFTING THE EXPERIENCE</small></div></div>
+
+    <header class="site-header" id="top"><nav class="navbar container" aria-label="Primary navigation">
+        <a class="logo" href="#home" aria-label="Prabhat Kumar Mahato home">P<span>RABHAT</span><b>.</b></a>
+        <button class="menu-toggle" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu"><span></span><span></span></button>
+        <div class="nav-panel" id="navLinks"><ul class="nav-links">
+            <li><a class="active" href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li>
+        </ul><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle theme"><span aria-hidden="true">&#9728;</span></button></div>
+    </nav></header>
+
+    <main>
+        <section class="hero container section-space" id="home"><div class="hero-copy reveal">
+            <div class="availability"><span></span> Available for Opportunities</div><p class="eyebrow">HELLO, I'M PRABHAT</p>
+            <h1>Building digital<br><em>experiences</em> that matter.</h1><p class="hero-intro">Passionate Java Developer and Frontend Web Developer creating clean, responsive and modern websites with a problem-solving mindset.</p>
+            <div class="hero-actions"><a class="button button-primary" href="#projects">View My Work <span>â†—</span></a><a class="button button-ghost" href="resume.pdf" download>Download CV <span>â†“</span></a></div>
+            <div class="hero-socials" aria-label="Social links"><a href="https://github.com/PrabhatKumarMahato373/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a><a href="https://www.linkedin.com/in/prabhat-kumar-mahato-b5a129338" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a href="https://www.instagram.com/kumar_mahato_9967" target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a><span class="social-line"></span><small>Scroll to explore</small></div>
+        </div><div class="hero-visual reveal reveal-delay" aria-label="Profile image and current roles"><div class="visual-ring ring-one"></div><div class="visual-ring ring-two"></div><div class="profile-frame"><img src="profile.png" alt="Prabhat Kumar Mahato"></div><div class="floating-chip chip-top"><span class="chip-dot"></span> Java / Web</div><div class="floating-chip chip-bottom"><strong>4+</strong><span>core roles<br>in progress</span></div><div class="role-card"><span class="mono-label">CURRENTLY EXPLORING</span><strong id="typing-text">Java Development</strong><i></i></div></div></section>
+
+        <section class="about container section-space" id="about"><div class="section-heading reveal"><span class="section-number">01 /</span><p class="eyebrow">A LITTLE ABOUT ME</p><h2>Curious by nature.<br><em>Intentional</em> by craft.</h2></div><div class="about-grid"><div class="about-image reveal"><img src="profile.png" alt="Prabhat Kumar Mahato profile portrait"><span class="image-caption">BOKARO, JHARKHAND<br><b>INDIA / 2026</b></span></div><div class="about-content reveal reveal-delay"><p class="lead">I'm <strong>Prabhat Kumar Mahato</strong>, a B.Tech Computer Science student at Swami Vivekananda University. I enjoy creating modern websites and solving programming problems using Java and C.</p><p>My goal is to become a professional Full Stack Java Developer and build high-quality software that solves real-world problems. I learn by building, refining, and sharing the work.</p><div class="interest-grid"><div><span>01</span><strong>Frontend Development</strong><small>Interfaces that feel alive</small></div><div><span>02</span><strong>Java Development</strong><small>Logic with a solid foundation</small></div><div><span>03</span><strong>Web Design</strong><small>Clarity in every detail</small></div><div><span>04</span><strong>Problem Solving</strong><small>Curiosity turned into code</small></div></div></div></div></section>
+
+        <section class="skills container section-space" id="skills"><div class="section-heading split-heading reveal"><div><span class="section-number">02 /</span><p class="eyebrow">THE TOOLKIT</p><h2>Skills that turn<br><em>ideas into interfaces.</em></h2></div><p class="heading-note">A growing toolkit shaped by coursework, curiosity, and hands-on projects.</p></div><div class="skills-grid">
+            <article class="skill-card reveal"><div class="skill-icon">&lt;/&gt;</div><h3>HTML5</h3><p>Semantic structure</p><span class="skill-level">Intermediate</span></article><article class="skill-card reveal reveal-delay"><div class="skill-icon">#</div><h3>CSS3</h3><p>Responsive styling</p><span class="skill-level">Intermediate</span></article><article class="skill-card reveal"><div class="skill-icon">JS</div><h3>JavaScript</h3><p>Interactive experiences</p><span class="skill-level">Learning</span></article><article class="skill-card reveal reveal-delay"><div class="skill-icon">JV</div><h3>Java</h3><p>Object-oriented logic</p><span class="skill-level">Intermediate</span></article><article class="skill-card reveal"><div class="skill-icon">C</div><h3>C Programming</h3><p>Strong fundamentals</p><span class="skill-level">Learning</span></article><article class="skill-card reveal reveal-delay"><div class="skill-icon">âŒ˜</div><h3>Git &amp; GitHub</h3><p>Version control</p><span class="skill-level">Learning</span></article><article class="skill-card reveal"><div class="skill-icon">VS</div><h3>VS Code</h3><p>Daily workspace</p><span class="skill-level">Comfortable</span></article>
+        </div></section>
+
+        <section class="projects container section-space" id="projects"><div class="section-heading split-heading reveal"><div><span class="section-number">03 /</span><p class="eyebrow">SELECTED WORK</p><h2>Things I've<br><em>built so far.</em></h2></div><div class="filter-tabs" role="group" aria-label="Filter projects"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="web">HTML/CSS/JS</button><button class="filter-btn" data-filter="java">Java</button><button class="filter-btn" data-filter="other">Other</button></div></div><div class="project-grid">
+            <article class="project-card reveal" data-category="web" data-project="portfolio"><div class="project-visual visual-blue"><span class="visual-code">&lt; portfolio /&gt;</span><span class="visual-number">01</span></div><div class="project-body"><div class="project-meta"><span>HTML / CSS / JS</span><span>2026</span></div><h3>Portfolio Website</h3><p>A responsive personal portfolio focused on clean presentation and smooth interaction.</p><button class="text-link view-project" type="button">View project <span>â†—</span></button></div></article><article class="project-card reveal reveal-delay" data-category="java" data-project="student"><div class="project-visual visual-green"><span class="visual-code">{ student.records }</span><span class="visual-number">02</span></div><div class="project-body"><div class="project-meta"><span>JAVA</span><span>2025</span></div><h3>Student Management System</h3><p>A Java-based desktop concept for managing student records with clear workflows.</p><button class="text-link view-project" type="button">View project <span>â†—</span></button></div></article><article class="project-card reveal" data-category="web" data-project="weather"><div class="project-visual visual-orange"><span class="visual-code">â˜¼ 28Â° / clear</span><span class="visual-number">03</span></div><div class="project-body"><div class="project-meta"><span>JAVASCRIPT API</span><span>2025</span></div><h3>Weather App</h3><p>A focused weather application concept designed around quick, readable updates.</p><button class="text-link view-project" type="button">View project <span>â†—</span></button></div></article>
+        </div></section>
+
+        <section class="stats-band"><div class="container stats-grid"><div class="stat reveal"><strong data-target="10">0</strong><span>Projects explored</span></div><div class="stat reveal reveal-delay"><strong data-target="8">0</strong><span>Core technologies</span></div><div class="stat reveal"><strong data-target="2">0</strong><span>Years learning</span></div><div class="stat reveal reveal-delay"><strong data-target="100">0</strong><span>Percent dedication</span></div></div></section>
+
+        <section class="education container section-space" id="education"><div class="section-heading reveal"><span class="section-number">04 /</span><p class="eyebrow">THE JOURNEY</p><h2>Learning is the<br><em>long game.</em></h2></div><div class="timeline"><article class="timeline-item reveal"><div class="timeline-marker">01</div><div class="timeline-date">2024 â€” PRESENT</div><div><h3>B.Tech (Computer Science &amp; Engineering)</h3><h4>Swami Vivekananda University, Kolkata</h4><p>Currently pursuing B.Tech with a focus on Java, Web Development and Data Structures.</p></div></article><article class="timeline-item reveal reveal-delay"><div class="timeline-marker">02</div><div class="timeline-date">2022 â€” 2024</div><div><h3>Higher Secondary (12th)</h3><h4>Jharkhand Academic Council</h4><p>Built the academic foundation that led me toward computer science.</p></div></article><article class="timeline-item reveal"><div class="timeline-marker">03</div><div class="timeline-date">2021 â€” 2022</div><div><h3>Secondary (10th)</h3><h4>Jharkhand Academic Council</h4><p>The beginning of a journey shaped by curiosity and consistency.</p></div></article></div></section>
+
+        <section class="services container section-space" id="services"><div class="section-heading reveal"><span class="section-number">05 /</span><p class="eyebrow">WHAT I CAN DO</p><h2>Building blocks for<br><em>better products.</em></h2></div><div class="services-grid"><article class="service-card reveal"><span>01</span><h3>Frontend Development</h3><p>Responsive interfaces with semantic HTML, polished CSS, and purposeful JavaScript.</p></article><article class="service-card reveal reveal-delay"><span>02</span><h3>Web Design</h3><p>Clear visual systems that make digital products easier and more enjoyable to use.</p></article><article class="service-card reveal"><span>03</span><h3>Java Development</h3><p>Reliable object-oriented foundations for practical applications and problem solving.</p></article><article class="service-card reveal reveal-delay"><span>04</span><h3>Responsive Websites</h3><p>Experiences that hold together beautifully from a small phone to a large display.</p></article></div></section>
+
+        <section class="contact container section-space" id="contact"><div class="contact-layout"><div class="section-heading reveal"><span class="section-number">06 /</span><p class="eyebrow">LET'S CONNECT</p><h2>Have an idea?<br><em>Let's make it real.</em></h2><p class="contact-copy">Whether you have a project in mind or simply want to say hello, my inbox is always open.</p><div class="contact-details"><a href="mailto:prabhatkumarmahato373@gmail.com">âœ‰ <span>prabhatkumarmahato373@gmail.com</span></a><a href="tel:+916299269967">âŒ• <span>+91 6299269967</span></a><span>âŒ– <span>Bokaro, Jharkhand</span></span></div></div><form class="contact-form reveal reveal-delay" id="contactForm" novalidate><label><span>Your name</span><input type="text" name="name" autocomplete="name" placeholder="Prabhat Kumar" required></label><label><span>Email address</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label><label><span>Subject</span><input type="text" name="subject" placeholder="Let's build something" required></label><label><span>Your message</span><textarea name="message" rows="5" placeholder="Tell me a little about your idea..." required></textarea></label><button class="button button-primary" type="submit">Send message <span>â†—</span></button><p class="form-status" id="formStatus" role="status"></p></form></div></section>
+    </main>
+    <footer class="footer"><div class="container footer-top"><a class="logo" href="#home">P<span>RABHAT</span><b>.</b></a><p>Building, learning and creating every day.</p><div class="footer-socials"><a href="https://github.com/PrabhatKumarMahato373/" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/prabhat-kumar-mahato-b5a129338" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.instagram.com/kumar_mahato_9967" target="_blank" rel="noopener noreferrer">Instagram</a></div></div><div class="container footer-bottom"><span>Â© 2026 Prabhat Kumar Mahato</span><a href="#top">Back to top â†‘</a></div></footer>
+    <button id="topBtn" type="button" aria-label="Back to top">â†‘</button>
+    <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-backdrop" data-close-modal></div><div class="modal-content"><button class="modal-close" type="button" data-close-modal aria-label="Close project details">Ã—</button><div class="modal-visual" id="modalVisual"></div><p class="eyebrow">PROJECT DETAIL</p><h2 id="modalTitle"></h2><p id="modalDescription"></p><div class="modal-tags" id="modalTags"></div><div class="modal-actions"><a class="button button-primary" id="modalGithub" href="#" target="_blank" rel="noopener noreferrer">GitHub <span>â†—</span></a><a class="button button-ghost" id="modalDemo" href="#" target="_blank" rel="noopener noreferrer">Live demo <span>â†—</span></a></div></div></div>
+    <script src="script.js"></script>
 </body>
 </html>
